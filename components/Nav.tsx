@@ -1,15 +1,15 @@
 "use client"
-import { useState } from "react";
-import { MobileNav } from "@material-tailwind/react";
-import Link from "next/link";
+import { useState, useEffect } from "react";
 
 const Nav = () => {
   const [opened, setOpened] = useState(false)
+
+
   return (
     <main className="">
-        <nav className="fixed right-0 left-0 top-0 z-[1000] flex justify-between py-7 px-10 pointer-events-auto bg-[#323232] max-sm:px-5 max-sm:py-5">
-            <h1 className="text-3xl font-[700] font-montserrat from-red-500 via-violet-600 to-green-600 bg-gradient-to-r bg-clip-text text-transparent">
-                <a href="/">HelloWorld</a>
+        <nav className={`fixed right-0 left-0 top-0 z-[1000] flex justify-between py-7 px-10 pointer-events-auto bg-white max-sm:px-5 max-sm:py-5 shadow-md`}>
+            <h1 className="flex items-center lg:text-2xl text-xl font-[700] font-montserrat from-red-500 via-violet-600 to-green-600 bg-gradient-to-r bg-clip-text text-transparent">
+                <a href="#Home">HelloWorld</a>
             </h1>
 
             <div className="flex md:hidden z-[3000]">
@@ -62,7 +62,7 @@ const Nav = () => {
                 <a href="#faqs" className="cursor-pointer">FAQs</a>
             </div> */}
 
-            <div className="md:flex hidden gap-10 text-lg font-bold text-white">
+            <div className="md:flex hidden gap-10 text-lg font-bold">
                 <a href="#Home" className="cursor-pointer">Home</a>
                 <a href="#about" className="cursor-pointer">About</a>
                 <a href="#speakers" className="cursor-pointer">Speakers</a>
