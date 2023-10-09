@@ -12,7 +12,7 @@ const Nav = () => {
                 <a href="/">HelloWorld</a>
             </h1>
 
-            <div className="flex sm:hidden">
+            <div className="flex md:hidden z-[3000]">
                 <button
                     id="hamburger"
                     className="p-2 text-gray-700 rounded-md outline-none"
@@ -49,12 +49,18 @@ const Nav = () => {
                                 )}                                
                 </button>
             </div>
-            <div className={`absolute ${opened ? "block": "hidden"} flex flex-col bg-black text-white right-0 top-full w-full justify-center items-center gap-3 pb-2 text-lg font-bold`}>
+            <div className={`bg-white flex flex-col gap-10 fixed items-center justify-center h-[100vh] text-center top-0 w-[100%] z-[300] ${opened ? "left-0": "left-[-100%]"} transition-all duration-700 text-2xl font-[600] font-montserrat`}>
+                <a onClick={() => setOpened(!opened)} href="#Home" className="cursor-pointer hover:text-yellow-100">Home</a>
+                <a onClick={() => setOpened(!opened)} href="#about" className="cursor-pointer">About</a>
+                <a onClick={() => setOpened(!opened)} href="#speakers" className="cursor-pointer">Speakers</a>
+                <a onClick={() => setOpened(!opened)} href="#faqs" className="cursor-pointer">FAQs</a>
+            </div>  
+            {/* <div className={`absolute ${opened ? "left-[-100%]": "left-[0]"} flex flex-col bg-[#323232] text-white right-0 top-full w-full justify-center items-center gap-3 pb-2 text-lg font-bold`}>
                 <a href="#Home" className="cursor-pointer">Home</a>
                 <a href="#about" className="cursor-pointer">About</a>
                 <a href="#speakers" className="cursor-pointer">Speakers</a>
                 <a href="#faqs" className="cursor-pointer">FAQs</a>
-            </div>
+            </div> */}
 
             <div className="md:flex hidden gap-10 text-lg font-bold text-white">
                 <a href="#Home" className="cursor-pointer">Home</a>

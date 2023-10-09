@@ -21,7 +21,7 @@ export default function Home() {
       <section className='min-h-screen'>
         pass
       </section>
-      <footer className='bg-[#323232] text-white font-bold text-lg py-10 px-5 flex justify-center items-center'>
+      <footer id="footer" className='bg-[#323232] text-white font-bold text-lg py-10 px-5 flex justify-center items-center'>
         Copyright © 2023. All rights are reserved
       </footer>
     </main>
