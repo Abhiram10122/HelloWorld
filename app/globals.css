@@ -13,6 +13,17 @@
 }
 
 @layer components {
+  .link-slide-from-top {
+    transition: transform 0.2s ease-in-out;
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  .link-slide-from-top:hover {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
   .max-container {
     max-width: 1440px;
     margin: 0 auto;

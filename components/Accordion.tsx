@@ -3,7 +3,7 @@ import React, { useState } from "react";
 
 const Accordion = () => {
   return (
-    <section className="relative z-20 overflow-hidden pt-20  lg:pt-[120px] bg-black lg:pb-[90px] shadow">
+    <section className="relative z-20 overflow-hidden pt-20 pb-20 px-5 lg:pt-[120px] bg-black lg:pb-[90px] shadow">
       <div className="container mx-auto">
         <div className="-mx-4 flex flex-wrap">
           <div className="w-full px-4">
@@ -84,15 +84,15 @@ export default Accordion;
 const AccordionItem = ({ header, text }:any) => {
   const [active, setActive] = useState(false);
 
-  const handleToggle = () => {
-    event.preventDefault();
+  const handleToggle = (event:any) => {
+    event.stopPropagation()
     setActive(!active);
   };
   return (
     <div className="mb-8 w-full  rounded-lg border border-[#F3F4FE] transition ease-in-out delay-150 md:hover:-translate-y-1 hover:scale-100  bg-white p-4 sm:p-8 lg:px-6 xl:px-8">
       <button
         className={`faq-btn flex w-full text-left `}
-        onClick={() => handleToggle()}
+        onClick={(e) => handleToggle(e)}
       >
         <div className="w-full">
           <h4 className="text-lg font-semibold text-black">{header}</h4>

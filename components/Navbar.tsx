@@ -1,13 +1,16 @@
 "use client"
+
 import { useState } from "react";
+
 var a='{ HelloWorld! }';
+
 export default function NavBar() {
     const [navbar, setNavbar] = useState(false);
     return (
         <header className="w-full shadow">
-            <nav className="justify-between px-4 mx-auto lg:items-center lg:flex bg-slate-200">
+            <nav className="justify-between px-20 py-4 max-sm:px-8 mx-auto lg:items-center lg:flex bg-slate-200">
                 <div>
-                    <div className="flex items-center justify-between  md:py-5 lg:block ">
+                    <div className="flex items-center justify-between md:py-5 lg:block ">
                         <a href="/">
                             <h2 className="text-2xl font-bold font-montserrat from-red-500 via-violet-600 to-green-600 bg-gradient-to-r bg-clip-text text-transparent">{a}</h2>
                         </a>
@@ -56,20 +59,20 @@ export default function NavBar() {
                             navbar ? "block" : "hidden"
                         }`}
                     >
-                        <ul className="items-center justify-center space-y-8 lg:flex lg:space-x-6 lg:space-y-0 ">
-                            <li className="text-gray-600 font-sans text-center ">
+                        <ul className="items-center justify-center space-y-8 lg:flex lg:space-x-16 lg:space-y-0">
+                            <li className="text-gray-600 font-sans text-center font-[800] text-lg">
                                 <a href="/">Home</a>
                             </li>
-                            <li className="text-gray-600 font-sans text-center ">
-                                <a href="/">Blog</a>
+                            <li className="text-gray-600 font-sans text-center font-[800] text-lg">
+                                <a href="/">About</a>
                             </li>
-                            <li className="text-gray-600 font-sans text-center ">
-                                <a href="/">About US</a>
+                            <li className="text-gray-600 font-sans text-center font-[800] text-lg">
+                                <a href="/">Speakers</a>
                             </li>
-                            <li className="text-gray-600 font-sans text-center">
-                                <a href="/">Contact US</a>
+                            <li className="text-gray-600 font-sans text-center font-[800] text-lg">
+                                <a href="/">FAQ</a>
                             </li>
-                            </ul>
+                        </ul>
                     </div>
                 </div>
             </nav>
