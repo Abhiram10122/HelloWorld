@@ -2,38 +2,28 @@ import NavBar from '@/components/Navbar'
 import Accordion from '@/components/Accordion'
 import Image from 'next/image'
 import Nav from '@/components/Nav'
+import Speakers from '@/components/Speakers'
+import { SP } from 'next/dist/shared/lib/utils'
 
 export default function Home() {
   return (
     <main className="">
       <Nav />
-      <section>
-        <div className="flex flex-col min-h-[50vh]">
-            <div className="flex justify-center items-center max-sm:flex-col px-10 py-20">
-                <div className='sm:w-[50%] flex justify-center py-5'>
-                    <Image src="/profileImage.jpeg" alt="profile" width={250} height={250} className='rounded-[2rem]'/>
-                </div>
-                <div className='sm:w-[50%]'>
-                    <p className='info-text'>
-                        This is Dinesh. He is the coolest guy in existense, why !??... Did you 
-                        look at his hair? Bro can rizz any one in our college.
-                    </p>
-                </div>
-            </div>
-            <div className="flex justify-center items-center max-sm:flex-col px-10 py-25">
-                sherlock
-            </div>
-            <div className="flex justify-center items-center max-sm:flex-col px-10 py-25">
-                aditya
-            </div>
-        </div>
-    </section>
+      <section className='mt-16 mb-8 grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 grid-col-1 sm:gap-4 gap-14'>
+        <Speakers name="Dinesh" pic="/profileImage.jpeg"/>
+        <Speakers name="Sherlock" pic="/profileImage.jpeg"/>
+        <Speakers name="Aditya" pic="/profileImage.jpeg"/>
+
+      </section>
       <section className='px-0 py-8'>
         <Accordion/>
       </section>
       <section className='min-h-screen'>
         pass
       </section>
+      <footer className='bg-[#323232] text-white font-bold text-lg py-10 px-5 flex justify-center items-center'>
+        Copyright © 2023. All rights are reserved
+      </footer>
     </main>
   )
 }

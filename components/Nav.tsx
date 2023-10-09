@@ -7,7 +7,7 @@ const Nav = () => {
   const [opened, setOpened] = useState(false)
   return (
     <main className="">
-        <nav className="max-md:fixed right-0 left-0 top-0 z-[1000] flex justify-between py-10 px-20 pointer-events-auto bg-black max-sm:px-5 max-sm:py-5">
+        <nav className="fixed right-0 left-0 top-0 z-[1000] flex justify-between py-7 px-10 pointer-events-auto bg-[#323232] max-sm:px-5 max-sm:py-5">
             <h1 className="text-3xl font-[700] font-montserrat from-red-500 via-violet-600 to-green-600 bg-gradient-to-r bg-clip-text text-transparent">
                 <a href="/">HelloWorld</a>
             </h1>
