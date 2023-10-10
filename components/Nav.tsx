@@ -1,21 +1,22 @@
 "use client"
 import { useState, useEffect } from "react";
+import ThemeButton from "./ThemeButton";
 
-const Nav = () => {
+const Nav = ({dark, handleTheme}: any) => {
   const [opened, setOpened] = useState(false)
-
 
   return (
     <main className="">
-        <nav className={`fixed right-0 left-0 top-0 z-[1000] flex justify-between py-7 px-10 pointer-events-auto bg-white max-sm:px-5 max-sm:py-5 shadow-md`}>
+        <nav className={`fixed right-0 left-0 top-0 z-[1000] flex justify-between py-7 px-10 pointer-events-auto ${dark ? "bg-[#1d2233]" : "bg-white"} max-sm:px-5 max-sm:py-5 shadow-md transition-all duration-700`}>
             <h1 className="flex items-center lg:text-2xl text-xl font-[700] font-montserrat from-red-500 via-violet-600 to-green-600 bg-gradient-to-r bg-clip-text text-transparent">
                 <a href="#Home">HelloWorld</a>
             </h1>
 
             <div className="flex md:hidden z-[3000]">
+                <ThemeButton dark={dark} handleTheme={handleTheme} color={dark ? "text-white-400": "text-black"}/>
                 <button
                     id="hamburger"
-                    className="p-2 text-gray-700 rounded-md outline-none"
+                    className={`p-2 ${dark ? "text-white-400":"text-black"} rounded-md outline-none`}
                     onClick={() => setOpened(!opened)}
                 >
                     {opened ? (
@@ -48,10 +49,12 @@ const Nav = () => {
                                     </svg>
                                 )}                                
                 </button>
+
             </div>
-            <div className={`bg-white flex flex-col gap-10 fixed items-center justify-center h-[100vh] text-center top-0 w-[100%] z-[300] ${opened ? "left-0": "left-[-100%]"} transition-all duration-700 text-2xl font-[600] font-montserrat`}>
-                <a onClick={() => setOpened(!opened)} href="#Home" className="cursor-pointer hover:text-yellow-100">Home</a>
+            <div className={`${dark ? "bg-[#627EF3] text-white":"bg-white text-black"} flex flex-col gap-10 fixed items-center justify-center h-[100vh] text-center top-0 w-[100%] z-[300] ${opened ? "left-0": "left-[-100%]"} transition-all duration-700 text-2xl font-[600] font-montserrat`}>
+                <a onClick={() => setOpened(!opened)} href="#Home" className="cursor-pointer">Home</a>
                 <a onClick={() => setOpened(!opened)} href="#about" className="cursor-pointer">About</a>
+                <a onClick={() => setOpened(!opened)} href="#course" className="cursor-pointer">Course</a>
                 <a onClick={() => setOpened(!opened)} href="#speakers" className="cursor-pointer">Speakers</a>
                 <a onClick={() => setOpened(!opened)} href="#faqs" className="cursor-pointer">FAQs</a>
             </div>  
@@ -62,9 +65,11 @@ const Nav = () => {
                 <a href="#faqs" className="cursor-pointer">FAQs</a>
             </div> */}
 
-            <div className="md:flex hidden gap-10 text-lg font-bold">
+            <div className={`md:flex hidden gap-10 text-lg font-bold items-center ${dark ? "text-white-400": "text-black"}`}>
+                <ThemeButton dark={dark} handleTheme={handleTheme} color={dark ? "text-white-400": "text-black"}/>
                 <a href="#Home" className="cursor-pointer">Home</a>
                 <a href="#about" className="cursor-pointer">About</a>
+                <a href="#course" className="cursor-pointer">Course</a>
                 <a href="#speakers" className="cursor-pointer">Speakers</a>
                 <a href="#faqs" className="cursor-pointer">FAQs</a>
             </div>

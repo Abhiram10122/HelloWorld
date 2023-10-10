@@ -1,13 +1,57 @@
-import NavBar from '@/components/Navbar'
+"use client"
 import Accordion from '@/components/Accordion'
-import Image from 'next/image'
 import Nav from '@/components/Nav'
 import Speakers from '@/components/Speakers'
+import About1 from '@/components/About'
+import About2 from '@/components/About2'
+import { useState } from 'react'
+
+
+const about_content = {
+  background: "bg-white",
+  title: "About",
+  content: "The world of engineering is so big and vast, there is so much great and also kinda scary stuff, it’s a huge mountain of mess ",
+  picture: "/innovatee.jpg",
+}
+
+const about2_content = {
+  background: "bg-[#1d2233] text-white",
+  title: "About",
+  content: "The world of engineering is so big and vast, there is so much great and also kinda scary stuff, it’s a huge mountain of mess ",
+  picture: "/innovatee.jpg",
+}
+
+const innovation_content = {
+  background: "bg-white",
+  title: "Innovate",
+  content: "The world of engineering is so big and vast, there is so much great and also kinda scary stuff, it’s a huge mountain of mess ",
+  picture: "/innovatee.jpg",
+}
+
+const design_content = {
+  background: "bg-[#1d2233] text-white",
+  title: "Design",
+  content: "The world of engineering is so big and vast, there is so much great and also kinda scary stuff, it’s a huge mountain of mess ",
+  picture: "/designn.jpg",
+}
+
+const tech_content = {
+  background: "bg-white",
+  title: "Technology",
+  content: "The world of engineering is so big and vast, there is so much great and also kinda scary stuff, it’s a huge mountain of mess ",
+  picture: "/Techkasvg.svg",
+}
+
 
 export default function Home() {
+  const [dark, setDark] = useState(false)
+  const handleTheme = () => {
+    setDark(!dark)
+  }
+
   return (
     <main className="">
-      <Nav />
+      <Nav dark={dark} handleTheme={handleTheme}/>
 
       {/* <section className='bg-[url("/heroImage.jpeg")] bg-auto bg-center pt-10 mt-[5rem]'>
         <img src="/heroImage.jpeg" alt="" />
@@ -16,7 +60,7 @@ export default function Home() {
       {/* <section className='h-auto w-full pt-20'>
         <img src="/heroImage.jpeg" alt="Hero Image"/>
       </section> */}
-      <section className='flex min-h-[100vh] justify-center items-start flex-col pt-10 bg-white-400 md:px-20 md:mx-20 px-10'>
+      <section id="Home" className='flex min-h-[100vh] justify-center items-start flex-col pt-10 md:px-[10rem] px-10 max-md:pb-10 max-md:pt-40 bg-[url(/bgGrid.jpeg)] bg-contain text-[#627EF3]'>
         <div className='flex md:flex-row flex-col justify-between'>
 
             <div className='flex flex-col gap-5 justify-center md:w-[50%] w-full px-5'>
@@ -28,23 +72,52 @@ export default function Home() {
             </div>
 
             <div>
-              <img src="/HeroImage2.png" alt="Hello World" height={400} width={600}/>
+              <img src="/Hero.png" alt="Hello World" height={400} width={600}/>
             </div>
         </div>
         <div className='flex mt-20 px-5 gap-10 items-center '>
-          <p className='text-2xl font-semibold font-montserrat'>Sponsers | </p>
+          <p className='text-2xl font-semibold font-montserrat max-sm:text-xl'>Sponsers <span className='max-sm:hidden'>|</span></p>
           <img src="/studentTribe.png" alt="Student Tribe" height={50} width={50} className='rounded-md'/>
           <img src="/github.png" alt="Git Hub" height={50} width={50} className='rounded-md'/>
         </div>
       </section>
 
-      <section className='pt-16 pb-8 grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 grid-col-1 sm:gap-4 gap-14 bg-[#d0d0d0]'>
-        <Speakers name="Dinesh" pic="/profileImage.jpeg"/>
-        <Speakers name="Sherlock" pic="/profileImage.jpeg"/>
-        <Speakers name="Aditya" pic="/profileImage.jpeg"/>
+      <section id="about">
+        <section>
+          <About1 contents={about_content}/>
+        </section>
+
+        <section>
+          <About2 contents={about2_content}/>
+        </section>
+      </section>
+      
+
+      <section id="course">
+        <section>
+          <About1 contents={innovation_content}/>
+        </section>
+
+        <section>
+          <About2 contents={design_content}/>
+        </section>
+
+        <section>
+          <About1 contents={tech_content}/>
+        </section>
+      </section>
+      
+
+      <section id="speakers" className='pt-16 pb-8 bg-gray-100 flex flex-col justify-center items-center'>
+        <h1 className='font-montserrat font-bold text-2xl max-sm:xl '>Meet Our Speakers</h1>
+        <div className='grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 grid-col-1 sm:gap-4 gap-14'>
+          <Speakers name="Dinesh" pic="/profileImage.jpeg"/>
+          <Speakers name="Sherlock" pic="/profileImage.jpeg"/>
+          <Speakers name="Aditya" pic="/profileImage.jpeg"/>
+        </div>
       </section>
 
-      <section className='px-0 py-8'>
+      <section id="faqs" className='px-0 py-8'>
         <Accordion/>
       </section>
 
