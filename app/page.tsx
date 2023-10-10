@@ -38,7 +38,7 @@ const design_content = {
 
 const tech_content = {
   background: "bg-white",
-  title: "Technology",
+  title: "Tech",
   content: "Explore Computer Science and Engineering, including Software Development, Chat GPT & Generative AI. Dive into Networking, Cloud, and Cyber Security, and embrace the collaborative spirit of Open Source & GitHub. Ready to navigate the tech landscape?",
   picture: "/Techkasvg.svg",
 }
