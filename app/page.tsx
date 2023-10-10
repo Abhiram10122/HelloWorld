@@ -9,16 +9,16 @@ import { useState } from 'react'
 
 const about_content = {
   background: "bg-white",
-  title: "About",
-  content: "The world of engineering is so big and vast, there is so much great and also kinda scary stuff, it’s a huge mountain of mess ",
-  picture: "/innovatee.jpg",
+  title: "What is Hello World?",
+  content: "A GDSC-MLRIT's initiate to introduce freshers into the world of Technology, Design, and StartUps during the timeline, scheduled over October-November on a weekly-basis.",
+  picture: "/about1.jpeg",
 }
 
 const about2_content = {
-  background: "bg-[#1d2233] text-white",
+  background: "bg-gray-100",
   title: "About",
   content: "The world of engineering is so big and vast, there is so much great and also kinda scary stuff, it’s a huge mountain of mess ",
-  picture: "/innovatee.jpg",
+  picture: "/discover.png",
 }
 
 const innovation_content = {
@@ -29,7 +29,7 @@ const innovation_content = {
 }
 
 const design_content = {
-  background: "bg-[#1d2233] text-white",
+  background: "bg-gray-100",
   title: "Design",
   content: "The world of engineering is so big and vast, there is so much great and also kinda scary stuff, it’s a huge mountain of mess ",
   picture: "/designn.jpg",
@@ -60,7 +60,7 @@ export default function Home() {
       {/* <section className='h-auto w-full pt-20'>
         <img src="/heroImage.jpeg" alt="Hero Image"/>
       </section> */}
-      <section id="Home" className='flex min-h-[100vh] justify-center items-start flex-col pt-10 md:px-[10rem] px-10 max-md:pb-10 max-md:pt-40 bg-[url(/bgGrid.jpeg)] bg-contain text-[#627EF3]'>
+      <section id="Home" className={`flex min-h-[100vh] justify-center items-start flex-col pt-10 md:px-[10rem] px-10 max-md:pb-10 max-md:pt-40 ${dark ? "bg-[url(/bgGrid.jpeg)] bg-contain text-[#627EF3]":"bg-gray-100"} transition-all duration-700`}>
         <div className='flex md:flex-row flex-col justify-between'>
 
             <div className='flex flex-col gap-5 justify-center md:w-[50%] w-full px-5'>
@@ -84,11 +84,11 @@ export default function Home() {
 
       <section id="about">
         <section>
-          <About1 contents={about_content}/>
+          <About1 contents={about_content} dark={dark}/>
         </section>
 
         <section>
-          <About2 contents={about2_content}/>
+          <About2 contents={about2_content} dark={dark}/>
         </section>
       </section>
       

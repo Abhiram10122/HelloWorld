@@ -1,8 +1,8 @@
 import React from 'react';
 
-const About1 = ({contents}: any) => {
+const About1 = ({contents, dark}: any) => {
   return (
-  <div className={`min-h-screen ${contents.background} flex items-center justify-center flex-col pt-5`}>
+  <div className={`min-h-screen bg-white flex items-center justify-center flex-col pt-5 max-md:pt-14 max-md:pb-8 md:px-[8rem]`}>
      {/* <div>
         <p className="text-center text-4xl w-full my-12 font-semibold pb-0">About</p>
      </div> */}
