@@ -4,41 +4,42 @@ import Nav from '@/components/Nav'
 import Speakers from '@/components/Speakers'
 import About1 from '@/components/About'
 import About2 from '@/components/About2'
+import Card from "@/components/SpeakerCard"
 import { useState } from 'react'
 
 
 const about_content = {
   background: "bg-white",
-  title: "What is Hello World?",
-  content: "A GDSC-MLRIT's initiate to introduce freshers into the world of Technology, Design, and StartUps during the timeline, scheduled over October-November on a weekly-basis.",
+  title: "About Hello World",
+  content: "The session is tailored to introduce students to the exciting world of Startups, Design, and Technology, providing firsthand exploration  through real-life experiences of field-experts",
   picture: "/about1.jpeg",
 }
 
 const about2_content = {
   background: "bg-gray-100",
-  title: "About",
-  content: "The world of engineering is so big and vast, there is so much great and also kinda scary stuff, it’s a huge mountain of mess ",
+  title: "Igniting Innovation",
+  content: "This session is strategically crafted with the goal of inspiring students to not only discover their passion but also initiate their transformative journey into the world of innovation.",
   picture: "/discover.png",
 }
 
 const innovation_content = {
   background: "bg-white",
-  title: "Innovate",
-  content: "The world of engineering is so big and vast, there is so much great and also kinda scary stuff, it’s a huge mountain of mess ",
+  title: "StartUp",
+  content: "Explore the startup realm with 'Introduction to Startups and Entrepreneurship!' Covering the life cycle, market research, pitching, and idea generation, this session is your key to unlocking the secrets of entrepreneurial success.",
   picture: "/innovatee.jpg",
 }
 
 const design_content = {
   background: "bg-gray-100",
   title: "Design",
-  content: "The world of engineering is so big and vast, there is so much great and also kinda scary stuff, it’s a huge mountain of mess ",
+  content: "Dive into the world of design and grasp its significance. Explore Graphic Design and UI/UX realms, gaining insights and life lessons through design—an enriching journey beyond visuals.",
   picture: "/designn.jpg",
 }
 
 const tech_content = {
   background: "bg-white",
   title: "Technology",
-  content: "The world of engineering is so big and vast, there is so much great and also kinda scary stuff, it’s a huge mountain of mess ",
+  content: "Explore Computer Science and Engineering, including Software Development, Chat GPT & Generative AI. Dive into Networking, Cloud, and Cyber Security, and embrace the collaborative spirit of Open Source & GitHub. Ready to navigate the tech landscape?",
   picture: "/Techkasvg.svg",
 }
 
@@ -95,30 +96,50 @@ export default function Home() {
 
       <section id="course">
         <section>
-          <About1 contents={innovation_content}/>
+          <About1 contents={innovation_content} dark={dark}/>
         </section>
 
         <section>
-          <About2 contents={design_content}/>
+          <About2 contents={design_content} dark={dark}/>
         </section>
 
         <section>
-          <About1 contents={tech_content}/>
+          <About1 contents={tech_content} dark={dark}/>
         </section>
       </section>
       
 
-      <section id="speakers" className='pt-16 pb-8 bg-gray-100 flex flex-col justify-center items-center'>
+      {/* <section id="speakers" className='pt-16 pb-8 bg-gray-100 flex flex-col justify-center items-center'>
         <h1 className='font-montserrat font-bold text-2xl max-sm:xl '>Meet Our Speakers</h1>
         <div className='grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 grid-col-1 sm:gap-4 gap-14'>
+          <Card name="Dinesh" info="GitHub campus expert" source="/profileImage.jpeg"/>
           <Speakers name="Dinesh" pic="/profileImage.jpeg"/>
           <Speakers name="Sherlock" pic="/profileImage.jpeg"/>
           <Speakers name="Aditya" pic="/profileImage.jpeg"/>
         </div>
-      </section>
+      </section> */}
 
-      <section id="faqs" className='px-0 py-8'>
-        <Accordion/>
+
+      <div id= "speakers"className={`flex flex-col justify-center min-h-screen ${dark ? "bg-[url(/bgGrid.jpeg)] bg-contain text-[#627EF3]":"bg-gray-100"}`}>
+        <div className='my-4'>
+          <h1 className="text-4xl font-sans text-center font-semibold">Our Speakers</h1>
+        </div>
+
+        <div className="flex pb-5 px-5 flex-wrap items-center justify-evenly gap-8 min-h-[80vh] max-md:pt-14 max-md:pb-8 md:px-[8rem]">
+        <Card name={"Afnan Abdul Vasay"} info={"Github Campus Expert"} 
+            source={"/profileImage.jpeg"} dark={dark}/>
+        <Card name={"Dinesh Nalam"} info={"Lead-GDSC Mlrit"} dark={dark}
+            source={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfBp5Jh1FS7gjMnHJhhV_QDcZvq6Gqkorglw&usqp=CAU"}/>
+        <Card name={"Sri Nikhil"} info={"Creatives Lead"} dark={dark}
+            source={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfBp5Jh1FS7gjMnHJhhV_QDcZvq6Gqkorglw&usqp=CAU"}/>
+        <Card name={"Adithya Vardhan"} info={"Technical Lead"} dark={dark}
+            source={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfBp5Jh1FS7gjMnHJhhV_QDcZvq6Gqkorglw&usqp=CAU"}/>
+        </div>
+      </div>
+      
+
+      <section id="faqs">
+        <Accordion dark={dark}/>
       </section>
 
       <footer id="footer" className='bg-[#323232] text-white font-bold text-lg py-10 px-5 flex justify-center items-center'>

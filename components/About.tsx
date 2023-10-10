@@ -11,8 +11,8 @@ const About1 = ({contents, dark}: any) => {
                 <img src={contents.picture} alt="" className='rounded-3xl ' />
         </div>
         <div className='w-full px-12 lg:w-1/2 flex flex-col items-start justify-start py-8'>
-            <p className="text-4xl w-full my-12 font-semibold pb-0">{contents.title}</p>
-            <p className='pb-4 font-montserrat text-2xl'>
+            <p className={`text-4xl w-full my-12 font-semibold pb-0 ${dark ? "text-[#627EF3]": ""}`}>{contents.title}</p>
+            <p className='pb-4 font-montserrat text-2xl max-md:text-xl'>
                 {contents.content}
             </p>
             {/* <p className='pb-4 font-montserrat text-2xl'>

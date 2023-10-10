@@ -1,9 +1,9 @@
 "use client"
 import React, { useState } from "react";
 
-const Accordion = () => {
+const Accordion = ({dark}:any) => {
   return (
-    <section className="relative z-20 overflow-hidden pt-20 pb-20 px-5 lg:pt-[120px] bg-[#959595] lg:pb-[90px] shadow">
+    <section className={`relative z-20 overflow-hidden pt-20 pb-20 px-5 lg:pt-[120px] ${dark ? "bg-[url(/bgGrid.jpeg)] bg-contain":"bg-gray-100"} lg:pb-[90px] shadow`}>
       <div className="container mx-auto">
         <div className="-mx-4 flex flex-wrap">
           <div className="w-full px-4">
@@ -11,7 +11,7 @@ const Accordion = () => {
               {/* <span className="mb-2 block text-3xl font-semibold  text-white">
                 FAQ
               </span> */}
-              <h2 className="mb-4 text-3xl font-bold text-white sm:text-4xl md:text-[40px]">
+              <h2 className={`mb-4 text-3xl font-bold sm:text-4xl md:text-[40px] ${dark ? "text-[#627EF3]" : "text-black"}`}>
                 Any Questions? Look Here
               </h2>
             </div>
@@ -21,38 +21,38 @@ const Accordion = () => {
         <div className="-mx-4 flex flex-wrap">
           <div className="w-full px-4 lg:w-1/2">
             <AccordionItem
-              header="How long we deliver your first blog post?"
+              header="What is the event about ?"
               text="It takes 2-3 weeks to get your first blog post ready. That includes the in-depth research & creation of your monthly content marketing strategy that we do before writing your first blog post, Ipsum available ."
             />
             <AccordionItem
-              header="How long we deliver your first blog post?"
+              header="When will the event be conducted ?"
               text="It takes 2-3 weeks to get your first blog post ready. That includes the in-depth research & creation of your monthly content marketing strategy that we do before writing your first blog post, Ipsum available ."
             />
             <AccordionItem
-              header="How long we deliver your first blog post?"
+              header="How do I register for this ?"
               text="It takes 2-3 weeks to get your first blog post ready. That includes the in-depth research & creation of your monthly content marketing strategy that we do before writing your first blog post, Ipsum available ."
             />
             <AccordionItem
-              header="How long we deliver your first blog post?"
+              header="Where will the event be held ?"
               text="It takes 2-3 weeks to get your first blog post ready. That includes the in-depth research & creation of your monthly content marketing strategy that we do before writing your first blog post, Ipsum available ."
             />
           </div>
 
           <div className="w-full px-4 lg:w-1/2">
             <AccordionItem
-              header="How long we deliver your first blog post?"
+              header="Who are the instructors ?"
               text="It takes 2-3 weeks to get your first blog post ready. That includes the in-depth research & creation of your monthly content marketing strategy that we do before writing your first blog post, Ipsum available ."
             />
             <AccordionItem
-              header="How long we deliver your first blog post?"
+              header="How can I get in touch with the instructors after the event ?"
               text="It takes 2-3 weeks to get your first blog post ready. That includes the in-depth research & creation of your monthly content marketing strategy that we do before writing your first blog post, Ipsum available ."
             />
             <AccordionItem
-              header="How long we deliver your first blog post?"
+              header="How much should I pay to attend this event ?"
               text="It takes 2-3 weeks to get your first blog post ready. That includes the in-depth research & creation of your monthly content marketing strategy that we do before writing your first blog post, Ipsum available ."
             />
             <AccordionItem
-              header="How long we deliver your first blog post?"
+              header="Will I get attendence for attending this event ?"
               text="It takes 2-3 weeks to get your first blog post ready. That includes the in-depth research & creation of your monthly content marketing strategy that we do before writing your first blog post, Ipsum available ."
             />
             
@@ -60,7 +60,7 @@ const Accordion = () => {
         </div>
       </div>
 
-      <div className="absolute bottom-0 right-0 z-[-1]">
+      <div className="absolute bottom-0 right-0 z-[-1] transition-all">
         <svg
           width="1440"
           height="886"
@@ -89,7 +89,7 @@ const AccordionItem = ({ header, text }:any) => {
     setActive(!active);
   };
   return (
-    <div className="mb-8 w-full  rounded-lg border border-[#F3F4FE] transition ease-in-out delay-150 md:hover:-translate-y-1 hover:scale-100  bg-white p-4 sm:p-8 lg:px-6 xl:px-8">
+    <div className="mb-8 w-full  rounded-lg border border-[#F3F4FE] transition-all ease-in-out delay-1000 md:hover:-translate-y-1 hover:scale-100  bg-white p-4 sm:p-8 lg:px-6 xl:px-8 shadow-lg">
       <button
         className={`faq-btn flex w-full text-left `}
         onClick={(e) => handleToggle(e)}
