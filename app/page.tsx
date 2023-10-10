@@ -1,7 +1,6 @@
 "use client"
 import Accordion from '@/components/Accordion'
 import Nav from '@/components/Nav'
-import Speakers from '@/components/Speakers'
 import About1 from '@/components/About'
 import About2 from '@/components/About2'
 import Card from "@/components/SpeakerCard"
@@ -45,106 +44,109 @@ const tech_content = {
 
 
 export default function Home() {
-  const [dark, setDark] = useState(false)
-  const handleTheme = () => {
-    setDark(!dark)
-  }
+    const [dark, setDark] = useState(false)
+    const handleTheme = () => {
+      setDark(!dark)
+    }
 
-  return (
-    <main className="">
-      <Nav dark={dark} handleTheme={handleTheme}/>
+    return (
+        <main>
+            {/* NAVBAR */}
+            <Nav dark={dark} handleTheme={handleTheme}/>
 
-      {/* <section className='bg-[url("/heroImage.jpeg")] bg-auto bg-center pt-10 mt-[5rem]'>
-        <img src="/heroImage.jpeg" alt="" />
-        pass
-      </section> */}
-      {/* <section className='h-auto w-full pt-20'>
-        <img src="/heroImage.jpeg" alt="Hero Image"/>
-      </section> */}
-      <section id="Home" className={`flex min-h-[100vh] justify-center items-start flex-col pt-10 md:px-[10rem] px-10 max-md:pb-10 max-md:pt-40 ${dark ? "bg-[url(/bgGrid.jpeg)] bg-contain text-[#627EF3]":"bg-gray-100"} transition-all duration-700`}>
-        <div className='flex md:flex-row flex-col justify-between'>
+            {/* Hero Section */}
+            <section id="Home" className={`flex min-h-[100vh] justify-center items-start flex-col pt-10 md:px-[10rem] px-10 max-md:pb-10 max-md:pt-40 ${dark ? "bg-[url(/bgGrid.jpeg)] bg-contain text-[#627EF3]":"bg-gray-100"} transition-all duration-700`}>
 
-            <div className='flex flex-col gap-5 justify-center md:w-[50%] w-full px-5'>
-              <h1 className='text-6xl font-bold font-poppins'>Hello World</h1>
-              <p className='info-text text-xl font-medium'>Dive into the world of Tech, 
-              Design and StartUps. Learn from the best and begin your journey!!</p>
-              <br />
-              <p className='text-2xl font-medium'>Ideate | Design | Code</p>
+                <div className='flex md:flex-row flex-col justify-between'>
+
+                    <div className='flex flex-col gap-5 justify-center md:w-[50%] w-full px-5'>
+                        <h1 className='text-6xl font-bold font-poppins'>Hello World</h1>
+                        <p className='info-text text-xl font-medium'>Dive into the world of Tech, 
+                        Design and StartUps. Learn from the best and begin your journey!!</p>
+                        <br />
+                        <p className='text-2xl font-medium'>Ideate | Design | Code</p>
+                    </div>
+
+                    <div>
+                        <img src="/Hero.png" alt="Hello World" height={400} width={600}/>
+                    </div>
+                </div>
+
+                <div className='flex mt-20 px-5 gap-10 items-center '>
+                    <p className='text-2xl font-semibold font-montserrat max-sm:text-xl'>Sponsers <span className='max-sm:hidden'>|</span></p>
+                    <img src="/studentTribe.png" alt="Student Tribe" height={50} width={50} className='rounded-md'/>
+                    {/* <img src="/github.png" alt="Git Hub" height={50} width={50} className='rounded-md'/> */}
+                </div>
+
+            </section>
+
+            {/* About Section */}
+            <section id="about">
+
+                <section>
+                    <About1 contents={about_content} dark={dark}/>
+                </section>
+
+                <section>
+                    <About2 contents={about2_content} dark={dark}/>
+                </section>
+
+            </section>
+            
+
+
+            {/* Course Details */}
+            <section id="course">
+
+                <section>
+                    <About1 contents={innovation_content} dark={dark}/>
+                </section>
+
+                <section>
+                    <About2 contents={design_content} dark={dark}/>
+                </section>
+
+                <section>
+                    <About1 contents={tech_content} dark={dark}/>
+                </section>
+
+            </section>
+
+
+
+            {/* Speakers Section */}
+            <div id= "speakers"className={`flex flex-col justify-center min-h-screen ${dark ? "bg-[url(/bgGrid.jpeg)] bg-contain text-[#627EF3]":"bg-gray-100"}`}>
+
+                <div className='my-4'>
+                    <h1 className="text-4xl font-sans text-center font-semibold">Our Speakers</h1>
+                </div>
+
+                <div className="flex pb-5 px-5 flex-wrap items-center justify-evenly gap-8 min-h-[80vh] max-md:pt-14 max-md:pb-8 md:px-[8rem]">
+                    <Card name={"Afnan Abdul Vasay"} info={"Github Campus Expert"} 
+                        source={"/profileImage.jpeg"} dark={dark}/>
+                    <Card name={"Dinesh Nalam"} info={"Lead-GDSC Mlrit"} dark={dark}
+                        source={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfBp5Jh1FS7gjMnHJhhV_QDcZvq6Gqkorglw&usqp=CAU"}/>
+                    <Card name={"Sri Nikhil"} info={"Creatives Lead"} dark={dark}
+                        source={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfBp5Jh1FS7gjMnHJhhV_QDcZvq6Gqkorglw&usqp=CAU"}/>
+                    <Card name={"Adithya Vardhan"} info={"Technical Lead"} dark={dark}
+                        source={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfBp5Jh1FS7gjMnHJhhV_QDcZvq6Gqkorglw&usqp=CAU"}/>
+                </div>
+
             </div>
-
-            <div>
-              <img src="/Hero.png" alt="Hello World" height={400} width={600}/>
-            </div>
-        </div>
-        <div className='flex mt-20 px-5 gap-10 items-center '>
-          <p className='text-2xl font-semibold font-montserrat max-sm:text-xl'>Sponsers <span className='max-sm:hidden'>|</span></p>
-          <img src="/studentTribe.png" alt="Student Tribe" height={50} width={50} className='rounded-md'/>
-          <img src="/github.png" alt="Git Hub" height={50} width={50} className='rounded-md'/>
-        </div>
-      </section>
-
-      <section id="about">
-        <section>
-          <About1 contents={about_content} dark={dark}/>
-        </section>
-
-        <section>
-          <About2 contents={about2_content} dark={dark}/>
-        </section>
-      </section>
-      
-
-      <section id="course">
-        <section>
-          <About1 contents={innovation_content} dark={dark}/>
-        </section>
-
-        <section>
-          <About2 contents={design_content} dark={dark}/>
-        </section>
-
-        <section>
-          <About1 contents={tech_content} dark={dark}/>
-        </section>
-      </section>
-      
-
-      {/* <section id="speakers" className='pt-16 pb-8 bg-gray-100 flex flex-col justify-center items-center'>
-        <h1 className='font-montserrat font-bold text-2xl max-sm:xl '>Meet Our Speakers</h1>
-        <div className='grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 grid-col-1 sm:gap-4 gap-14'>
-          <Card name="Dinesh" info="GitHub campus expert" source="/profileImage.jpeg"/>
-          <Speakers name="Dinesh" pic="/profileImage.jpeg"/>
-          <Speakers name="Sherlock" pic="/profileImage.jpeg"/>
-          <Speakers name="Aditya" pic="/profileImage.jpeg"/>
-        </div>
-      </section> */}
+            
 
 
-      <div id= "speakers"className={`flex flex-col justify-center min-h-screen ${dark ? "bg-[url(/bgGrid.jpeg)] bg-contain text-[#627EF3]":"bg-gray-100"}`}>
-        <div className='my-4'>
-          <h1 className="text-4xl font-sans text-center font-semibold">Our Speakers</h1>
-        </div>
+            {/* FAQ's Section */}
+            <section id="faqs">
+                <Accordion dark={dark}/>
+            </section>
 
-        <div className="flex pb-5 px-5 flex-wrap items-center justify-evenly gap-8 min-h-[80vh] max-md:pt-14 max-md:pb-8 md:px-[8rem]">
-        <Card name={"Afnan Abdul Vasay"} info={"Github Campus Expert"} 
-            source={"/profileImage.jpeg"} dark={dark}/>
-        <Card name={"Dinesh Nalam"} info={"Lead-GDSC Mlrit"} dark={dark}
-            source={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfBp5Jh1FS7gjMnHJhhV_QDcZvq6Gqkorglw&usqp=CAU"}/>
-        <Card name={"Sri Nikhil"} info={"Creatives Lead"} dark={dark}
-            source={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfBp5Jh1FS7gjMnHJhhV_QDcZvq6Gqkorglw&usqp=CAU"}/>
-        <Card name={"Adithya Vardhan"} info={"Technical Lead"} dark={dark}
-            source={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfBp5Jh1FS7gjMnHJhhV_QDcZvq6Gqkorglw&usqp=CAU"}/>
-        </div>
-      </div>
-      
 
-      <section id="faqs">
-        <Accordion dark={dark}/>
-      </section>
 
-      <footer id="footer" className='bg-[#323232] text-white font-bold text-lg py-10 px-5 flex justify-center items-center'>
-        Copyright © 2023. All rights are reserved
-      </footer>
-    </main>
-  )
+            {/* Footer */}
+            <footer id="footer" className='bg-[#323232] text-white font-bold text-lg py-10 px-5 flex justify-center items-center'>
+                Copyright © 2023. All rights are reserved
+            </footer>
+        </main>
+    )
 }
